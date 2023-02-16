@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("https://images.unsplash.com/photo-1496450681664-3df85efbd29f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.header {
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+}
+
+.weather-title {
+  text-align: center;
+}
+
+.main {
+  display: flex;
+}
+
+.main .main-time {
+  width: 20%;
+}
+
+.main .main-time h4 {
+  display: inline-block;
+  position: relative;
+  top: 30%;
+  left: 25%;
+}
+
+.main-area-card {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-area-card ul {
+  max-width: 500px;
+  margin: 2vh 5vw;
+  padding: 4vh 5vw;
+  border: 2px solid rgba(47, 79, 79, 0.473);
+  transition: all 0.4s ease;
+}
+
+.main-area-card ul:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1.5rem 4rem;
+  transform: translateY(-15px);
+}
+
+.main-area-card ul .none-list-style {
+  list-style-type: none;
+}
+
+.main-area-card ul li {
+  margin-bottom: 1.2vh;
+}
+
+.main-area-card ul li a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.main-area-card ul li a:hover {
+  color: lightslategray;
+}
+
+.main-text {
+  width: 70%;
+
+  text-align: center;
+}
+
+.main-text h1,
+.main-text p {
+  margin-bottom: 2.5vh;
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1030px) {
+  body {
+    height: 95vh;
+  }
+}
+@media screen and (max-width: 1029px) {
+  .header {
+    margin-bottom: 5vh;
+  }
+  .main {
+    display: unset;
+  }
+  .main .main-time {
+    width: unset;
+  }
+  .main .main-time h4 {
+    display: block;
+    top: unset;
+    left: unset;
+    text-align: center;
+    margin-bottom: 5vh;
+  }
+  .main-area-card {
+    width: unset;
+  }
+  .main-area-card ul {
+    width: 400px;
+    margin: 2vh auto;
+  }
+
+  .main-text {
+    width: unset;
+  }
+} /*# sourceMappingURL=style.css.map */

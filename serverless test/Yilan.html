@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>24小時內台灣天氣</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/weatherCard.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="weather-title">台灣天氣預報</h1>
+    </div>
+    <div class="main">
+      <div class="main-time">
+        <h4></h4>
+      </div>
+      <div class="main-text"></div>
+    </div>
+  </body>
+  <script>
+    const mainText = document.querySelector(".main-text");
+
+    console.log(mainText);
+    fetch(
+      "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-E5F5004D-3F60-45A5-A267-34A4228B2CF9"
+    )
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (myJson) {
+        mainText.innerHTML = ` 
+    <h1>${myJson.records.location[7].locationName}</h1>
+    <p>天氣現象:${myJson.records.location[7].weatherElement[0].time[2].parameter.parameterName}</p>
+    <p>最高溫度:${myJson.records.location[7].weatherElement[4].time[2].parameter.parameterName}度</p>
+    <p>最低溫度:${myJson.records.location[7].weatherElement[2].time[2].parameter.parameterName}度</p>
+    <p>舒適度:${myJson.records.location[7].weatherElement[3].time[2].parameter.parameterName}</p>
+    <p>降雨機率:${myJson.records.location[7].weatherElement[1].time[2].parameter.parameterName}%</p>`;
+      });
+  </script>
+  <script src="js/time.js"></script>
+  <script src="./app.js"></script>
+</html>
